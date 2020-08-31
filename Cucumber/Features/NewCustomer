@@ -1,0 +1,15 @@
+Feature: HotelDominicParks New customer account
+
+  Scenario Outline: New user creates an account
+
+    Given an open browser
+    When user tries to sign in
+    Then he gives his email address
+    And clicks 'create an account'
+    And gives his firstname "<firstname>", lastname "<lastname>", password "<password>", dateOfBirth "<dayOfBirth>", "<monthOfBirth>", "<yearOfBirth>"
+    Then user is registered
+
+    Examples:
+
+      |  firstname    |   lastname   |  password   |  dayOfBirth   |  monthOfBirth   | yearOfBirth   |
+      |  Jan          |    Nowak     |   pass123   |     10        |     May         |    1990       |
